@@ -1,0 +1,21 @@
+{% extends 'musicHome/base.html' %}
+
+{% block main %}
+    <h1>{{ title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+    </form>
+
+    <!--<div class="txt">Войти</div><br><br>
+    <input id="email" type="email" class="forms" placeholder="Введите электронную почту"><br><br>
+    <input id="password" type="password" class="forms" placeholder="Введите пароль"><br><br>
+    <input id="vhod" type="button" class="bhead" value="Войти"><br><br>
+    еще не зарегистроированы?
+    <input id="reg" type="button" class="btn menu" value="жмите сюда">
+
+    {% for i in data %}
+        <p>{{i.first_name}}</p>
+    {% endfor %}-->
+{% endblock %}

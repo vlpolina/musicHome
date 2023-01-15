@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="utf-8"
+          name="description" content="Купить музыкальные инструменты. Множество точек по всей России. Доставим к дверям вашего дома"
+          name="keywords" content="музыкальыне инструменты, купить гитару, купить фортепиано, купить синтезатор, купить">
+    <link type="text/css" rel="stylesheet" href="{% static 'musicHome/css/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'musicHome/sources/logo.png' %}" type="image/x-icon">
+    <title> {{ title }} </title>
+</head>
+<body>
+<script type="text/javascript" src="{% static 'musicHome/js/menu.js' %}"></script>
+<header>
+    <img src="{% static 'musicHome/sources/logo.png' %}" alt="logo" class="lh" id="main">
+    <img src="{% static 'musicHome/sources/logo-txt.png' %}" alt="logo-text" class="logo" id="mainn">
+    <a href="{% url 'registrate' %}">Регистрация</a> | <a href="{% url 'log_in' %}">Войти</a>
+    <!--<input id="reg" type="button" class="btn bhead" value="Регистрация">
+    <input id="enter" type="button" class="btn bhead" value="Авторизация">-->
+</header>
+<nav>
+    <label for="city"></label><select id="city" class="city">
+    <option value="" disabled selected>Выберите город</option>
+    <option value="Томск">Томск</option>
+</select>
+    <input id="page_main" type="button" class="btn menu" value="главная">
+    <input id="page_help" type="button" class="btn menu" value="помощь">
+    <input id="page_delivery" type="button" class="btn menu" value="о доставке">
+    <input id="page_do" type="button" class="btn menu" value="услуги">
+    <input id="search" type="text" class="city" placeholder="Поиск">
+    </nav>
+<main>
+    {% block main %}
+    {% endblock main %}
+</main>
+</body>
+</html>
